@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+//Artical 定义文章类
 type Artical struct {
 	ID         int64     `json:"id"`
 	Name       string    `xorm:"varchar(255) index" json:"name"`
@@ -16,13 +17,16 @@ type Artical struct {
 	UpdateTime time.Time `xorm:"updated" json:"update_time"`
 }
 
+//ArticalSummary 定义文章摘要类
 type ArticalSummary struct {
 }
 
+//NewArtical 创建新文章
 func NewArtical() *Artical {
 	return &Artical{}
 }
 
+//GetArtical 根据ID获取文章
 func GetArtical(ID int64) *Artical {
 	if ID < 0 {
 		return &Artical{}
@@ -37,6 +41,7 @@ func GetArtical(ID int64) *Artical {
 	return atl
 }
 
+//Insert 将新文章插入数据库
 func (atl *Artical) Insert() (bool, error) {
 	if atl.ID != 0 {
 		return false, errors.New("artical already been inserted")
@@ -48,10 +53,12 @@ func (atl *Artical) Insert() (bool, error) {
 	return true, nil
 }
 
+//Update 更新文章信息
 func (atl *Artical) Update() (bool, error) {
 	return true, nil
 }
 
+//Delete 删除指定文章
 func (atl *Artical) Delete() (bool, error) {
 	return true, nil
 }
