@@ -13,3 +13,11 @@ type Artical struct {
 	CreateTime time.Time `xorm:"created"`
 	UpdateTime time.Time `xorm:"updated"`
 }
+
+func NewArtical() *Artical {
+	return &Artical{}
+}
+
+func (atl *Artical) Insert() *Artical {
+
+}
