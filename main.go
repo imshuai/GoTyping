@@ -8,9 +8,12 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	e := gin.Default()
 
-	e.GET("/", func(c *gin.Context) {
-		c.String(200, "%v", "Hello World")
-	})
+	e.StaticFile("/favicon.png", "./Statics/favicon.png")
+	e.Static("/static", "./Statics")
+	e.LoadHTMLGlob("./Templates/**/*")
+
+	e.GET("/", routeIndex)
+	e.GET("/page/:pid", routeIndex)
 
 	e.Run(":8080")
 

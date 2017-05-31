@@ -57,7 +57,7 @@ func (c dbConfig) Check() error {
 }
 
 func readConfigFormFile() (dbConfig, error) {
-	bs, err := ioutil.ReadFile("db_config.json")
+	bs, err := ioutil.ReadFile("db_config.1.json")
 	if err != nil {
 		log.Fatalln("read database config file db_config.json fail with error:", err)
 	}
@@ -73,7 +73,7 @@ func readConfigFormFile() (dbConfig, error) {
 }
 
 //DatabaseInit 初始化数据库连接
-func DatabaseInit() {
+func DatabaseInit() error {
 	var err error
 	config, err := readConfigFormFile()
 	if err != nil {
@@ -86,5 +86,5 @@ func DatabaseInit() {
 	db.SetMapper(core.GonicMapper{})
 	db.SetMaxIdleConns(5)
 	db.SetMaxOpenConns(100)
-	db.Sync2(&Artical{}, &Comment{})
+	return db.Sync2(&Artical{}, &Comment{}, &Category{}, &Option{})
 }

@@ -1,0 +1,51 @@
+{{define "Summary/index.html"}} {{template "Common/header" .head}}
+</head>
+
+<body>
+    {{template "Common/navbar" .navbar}}
+
+    <div class="container">
+
+        <div class="row">
+            {{range .data.summary}}
+            <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+                <div class="artical-box">
+                    <div class="artical-title"><a href="/artical/{{.ID}}">{{.Name}}</a></div>
+                    <div class="artical-info">{{.CreateTime}}</div>
+                    <hr>
+                    <div class="artical-summary">{{.Summary}}</div>
+                    <hr>
+                    <div class="artical-tool">
+                        <ul class="list-unstyled">
+                            <li class="readmore">
+                                <a href="/artical/{{.ID}}">Read More</a>
+                            </li>
+                            <li class="comments">
+                                <a href="/artical/{{.ID}}#comments">Comments</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <h1>等待作者添加文章</h1>
+            </div>
+            {{end}}
+        </div>
+        <div class="row">
+            {{if .data.prepage}}
+            <div class="pre-page pull-left"><a href="/page/{{ .data.prepage }}">Pre Page</a></div>
+            {{end}} {{if .data.nextpage}}
+            <div class="next-page pull-right"><a href="/page/{{ .data.nextpage }}">Next Page</a></div>
+            {{end}}
+        </div>
+        <div class="row row-margin-bottom-50"></div>
+    </div>
+
+    {{template "Common/script" .script}}
+</body>
+
+</html>
+{{end}}

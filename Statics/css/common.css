@@ -1,0 +1,93 @@
+body {
+    margin-top: 75px;
+    background: #e0e0e0;
+}
+
+nav.navbar.navbar-default.navbar-fixed-top {
+    background: linear-gradient(0deg, rgb(224, 224, 224), #ffffff);
+    box-shadow: 0 0 3px 0px rgb(21, 21, 21);
+}
+
+.artical-box {
+    background: white;
+    box-shadow: 1px 1px 3px 0 rgba(97, 97, 97, 0.63);
+    border-radius: 3px;
+    padding: 7px 15px;
+    margin-bottom: 15px;
+}
+
+.artical-box hr {
+    margin: 15px 0;
+}
+
+.artical-title {
+    font-size: 2em;
+    padding-left: 12px;
+}
+
+.artical-title a:hover,
+.artical-title a {
+    color: #383838;
+    transition: .3s;
+}
+
+.artical-title a:hover {
+    text-decoration: none;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+.artical-info {
+    color: rgba(128, 128, 128, 0.8);
+    padding-left: 32px;
+}
+
+.artical-summary {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    color: #525252;
+    line-height: 120%;
+}
+
+.artical-tool li {
+    display: inline-block;
+    border: 1px #e0e0e0 solid;
+    border-radius: 2px;
+    margin-right: 5px;
+    line-height: 170%;
+    padding: 3px;
+}
+
+.artical-tool a {
+    color: #545454;
+    transition: .3s;
+}
+
+.artical-tool a:hover {
+    color: #f58954;
+    text-decoration: none;
+}
+
+.next-page,
+.pre-page {
+    background: white;
+    box-shadow: 1px 1px 3px 0 rgba(97, 97, 97, 0.63);
+    border-radius: 2px;
+    padding: 7px;
+}
+
+.next-page a,
+.pre-page a {
+    color: rgba(0, 0, 0, 0.60);
+    text-decoration-line: none;
+    transition: all .2s;
+}
+
+.next-page a:hover,
+.pre-page a:hover {
+    color: rgba(0, 0, 0, 0.85);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.52);
+}
+
+.row-margin-bottom-50 {
+    margin-bottom: 50px;
+}
