@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"log"
-
+	"model"
 	"strconv"
 
 	"encoding/json"
@@ -86,5 +86,5 @@ func DatabaseInit() error {
 	db.SetMapper(core.GonicMapper{})
 	db.SetMaxIdleConns(5)
 	db.SetMaxOpenConns(100)
-	return db.Sync2(&Artical{}, &Comment{}, &Category{}, &Option{})
+	return db.Sync2(&model.Artical{}, &model.Comment{}, &model.Category{})
 }

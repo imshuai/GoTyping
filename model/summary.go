@@ -1,4 +1,4 @@
-package Model
+package model
 
 //ArticalSummary 定义文章摘要类
 type ArticalSummary struct {
