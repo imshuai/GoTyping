@@ -2,21 +2,19 @@ package model
 
 import (
 	"errors"
-	"time"
 )
 
 //Artical 定义文章类
 type Artical struct {
-	ID         int64  `json:"id"`
-	Name       string `xorm:"varchar(255) index" json:"name"`
-	Alias      string `xorm:"varchar(255) index" json:"alias"`
-	Summary    string `xorm:"varchar(1024) index" json:"summary"`
-	Content    string `xorm:"text" json:"content"`
-	Author     string `xorm:"varchar(30)" json:"author"`
-	Category   int64
-	Keywords   []string
-	CreateTime time.Time `xorm:"created" json:"create_time"`
-	UpdateTime time.Time `xorm:"updated" json:"update_time"`
+	ID       int64    `json:"id"`
+	Name     string   `xorm:"varchar(255) index" json:"name"`
+	Alias    string   `xorm:"varchar(255) index" json:"alias"`
+	Summary  string   `xorm:"varchar(1024) index" json:"summary"`
+	Content  string   `xorm:"text" json:"content"`
+	Author   string   `xorm:"varchar(30)" json:"author"`
+	Category int64    `json:"category_id"`
+	Keywords []string `json:"keywords"`
+	Common
 }
 
 //Query 根据ID获取文章

@@ -7,6 +7,7 @@ type ArticalSummary struct {
 	Summary    string   `json:"summary"`
 	Category   Category `json:"category"`
 	CreateTime string   `json:"create_time"`
+	UpdateTime string   `json:"update_time"`
 }
 
 //GenSummary 生成文章摘要索引
@@ -21,6 +22,7 @@ func (atl *Artical) GenSummary() ArticalSummary {
 			return *cat
 		}(),
 		CreateTime: atl.CreateTime.Format("Monday, 02 Jan 2006"),
+		UpdateTime: atl.UpdateTime.Format("Monday, 02 Jan 2006"),
 	}
 }
 

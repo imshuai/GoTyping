@@ -2,19 +2,18 @@ package model
 
 import (
 	"errors"
-	"time"
 )
 
 //Comment 定义评论类
 type Comment struct {
-	ID         int64 `json:"id"`
-	ArticalID  int64
-	Author     string    `xorm:"varchar(30)" json:"author"`
-	Content    string    `xorm:"text" json:"content"`
-	CreateTime time.Time `xorm:"created" json:"time"`
-	CommentTo  int64     `xorm:"default(0)" json:"comment_to"`
-	Like       int64     `xorm:"default(0)" json:"like"`
-	Unlike     int64     `xorm:"default(0)" json:"unlike"`
+	ID        int64  `json:"id"`
+	ArticalID int64  `json:"artical_id"`
+	Author    string `xorm:"varchar(30)" json:"author"`
+	Content   string `xorm:"text" json:"content"`
+	CommentTo int64  `xorm:"default(0)" json:"comment_to"`
+	Like      int64  `xorm:"default(0)" json:"like"`
+	Unlike    int64  `xorm:"default(0)" json:"unlike"`
+	Common
 }
 
 //ArticalComments 定义文章评论列表类

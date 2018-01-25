@@ -2,17 +2,16 @@ package model
 
 import (
 	"errors"
-	"time"
 )
 
 //Category 定义文章分类
 type Category struct {
-	ID          int64     `json:"id"`
-	Name        string    `json:"name" xorm:"unique"`
-	Alias       string    `json:"alias" xorm:"unique"`
-	Keywords    []string  `json:"keywords"`
-	Description string    `json:"description"`
-	CreateTime  time.Time `json:"create_time" xorm:"created"`
+	ID          int64    `json:"id"`
+	Name        string   `json:"name" xorm:"unique"`
+	Alias       string   `json:"alias" xorm:"unique"`
+	Keywords    []string `json:"keywords"`
+	Description string   `json:"description"`
+	Common
 }
 
 //NewCatagory 根据名称和别名新建分类
