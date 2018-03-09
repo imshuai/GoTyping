@@ -5,7 +5,9 @@ import (
 )
 
 func getFrontDefault() gin.H {
-	return gin.H{}
+	data := gin.H{}
+	data["SiteName"] = "GoTyping"
+	return data
 }
 
 func getBackDefault() gin.H {

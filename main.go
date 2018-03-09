@@ -2,28 +2,21 @@ package main
 
 import (
 	"controller"
-	"os"
 	"utils"
 	"views"
-
-	lg "github.com/imshuai/lightlog"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	lg.SetConsole(false)
-	lg.SetLevel(lg.DEBUG)
-	lg.SetPrefix("GoTyping")
-	lg.SetRollingDaily("./logs", "GoTyping.log")
-	gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.DebugMode)
 	e := gin.New()
-	e.Use(gin.Recovery(), utils.Logger(os.Stdout))
+	e.Use(gin.Recovery(), utils.EnginLogger())
 
-	e.StaticFile("/favicon.png", "./statics/favicon.png")
-	e.Static("/static", "./statics")
+	e.StaticFile("/favicon.png", "statics/favicon.png")
+	e.Static("/static", "statics")
 	e.SetFuncMap(views.TplFuncs)
-	e.LoadHTMLGlob("./templates/**/*")
+	e.LoadHTMLGlob("templates/**/*")
 	e.GET("/", controller.HandleHomePage)
 	e.GET("/page/:pid", controller.HandleArticalPagination)
 	e.GET("/artical/:slug", controller.HandleArtical)
@@ -37,5 +30,4 @@ func main() {
 	}
 
 	e.Run(":8080")
-
 }

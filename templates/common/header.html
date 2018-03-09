@@ -1,4 +1,4 @@
-{{define "Common/header" }}
+{{define "common/header" }}
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>{{.PageTitle}}</title>
+    <title>{{.PageTitle}} | {{.SiteName}}</title>
     <meta name="keywords" content="{{range $i,$v := .Keywords}}{{$v}}{{else}}{{end}}GoTyping,golang">
     <meta name="description" content="{{if .Description}}{{.Description}}{{else}}More than you see{{end}}">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -25,4 +25,4 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-    {{end}}
+</head> {{end}}
